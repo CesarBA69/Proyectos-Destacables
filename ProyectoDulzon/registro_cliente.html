@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro</title>
+ <link rel="stylesheet" href="style.css">
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const tema = localStorage.getItem('tema');
+    if (tema) {
+      document.body.classList.add('tema-' + tema);
+      const navbar = document.querySelector('.navbar');
+      const botones = document.querySelectorAll('button');
+      if (navbar) navbar.classList.add('tema-' + tema);
+      botones.forEach(btn => btn.classList.add('tema-' + tema));
+    }
+  });
+</script>
+
+</head>
+
+<body>
+  <main class="form-container">
+    <h2>Registro</h2>
+    <form action="registro_cliente.php" method="POST" onsubmit="return validarRegistro()">
+
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="usuario">Usuario:</label>
+      <input type="text" id="usuario" name="usuario" required>
+
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" name="correo" required>
+
+      <label for="contrasena">Contraseña (solo minúsculas):</label>
+      <input type="password" id="contrasena" name="contrasena" required>
+
+      <button type="submit">Registrar</button>
+    </form>
+    <p id="mensaje"></p>
+    <a href="index.php">Volver al inicio</a>
+  </main>
+
+  <script>
+    function validarRegistro() {
+      const contrasena = document.getElementById("contrasena").value;
+      const regex = /^[a-z]+$/;
+      const mensaje = document.getElementById("mensaje");
+
+      if (!regex.test(contrasena)) {
+        mensaje.textContent = "La contraseña debe contener solo letras minúsculas.";
+        mensaje.style.color = "red";
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+
+</html>

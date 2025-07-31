@@ -1,0 +1,310 @@
+/* === RESET Y FUENTE === */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff8f0;
+  color: #333;
+}
+
+/* === BARRA DE NAVEGACIÓN === */
+.navbar {
+  background-color: #ffb6b6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Contenedor izquierda: logo y nombre */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 45px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(255, 182, 182, 0.7);
+}
+
+.nombre-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 3px #b34a4a;
+  user-select: none;
+}
+
+/* Navegación centro */
+.nav-center {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-link {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 18px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(255, 182, 182, 0.6);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: #fff;
+  color: #ff6f6f;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(255, 111, 111, 0.8);
+}
+
+/* Contenedor derecha: botones sesión */
+.nav-right {
+  display: flex;
+  gap: 15px;
+}
+
+/* Botones generales */
+.btn {
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  box-shadow: 0 3px 7px rgba(255, 111, 111, 0.5);
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.btn-login {
+  background-color: #ffe1e1;
+  color: #d94a4a;
+  box-shadow: 0 3px 7px rgba(217, 74, 74, 0.6);
+}
+
+.btn-login:hover,
+.btn-login:focus {
+  background-color: #d94a4a;
+  color: #fff;
+  box-shadow: 0 5px 14px rgba(217, 74, 74, 0.9);
+  outline: none;
+}
+
+.btn-register {
+  background-color: #ff6f6f;
+  color: #fff;
+  box-shadow: 0 3px 7px rgba(255, 111, 111, 0.7);
+}
+
+.btn-register:hover,
+.btn-register:focus {
+  background-color: #ff4a4a;
+  box-shadow: 0 5px 14px rgba(255, 74, 74, 0.9);
+  outline: none;
+}
+
+/* === CLASE OCULTAR === */
+.hidden {
+  display: none;
+}
+
+
+/* === FORMULARIOS === */
+.form-container {
+  max-width: 400px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.form-container .titulo {
+  text-align: center;
+  color: #d63384;
+  margin-bottom: 20px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #d63384;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.form-container button:hover {
+  background-color: #b82e6c;
+}
+
+.volver-inicio {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #d63384;
+  text-decoration: none;
+}
+
+.volver-inicio:hover {
+  text-decoration: underline;
+}
+
+/* === SECCIÓN DE PRODUCTOS === */
+.product-card {
+  text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 200px;
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* === PROMOCIONES === */
+.etiqueta-descuento {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff5252;
+  color: white;
+  padding: 6px 10px;
+  font-weight: bold;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+/* === Carrusel === */
+.carrusel-viewport {
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.carrusel-imagenes {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.carrusel-imagenes img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+/* === TEXTAREA EN FORMULARIOS === */
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* === MENSAJES === */
+#mensaje-agregar,
+#mensaje-eliminar {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#mensaje-agregar {
+  color: green;
+}
+
+#mensaje-eliminar {
+  color: red;
+}
+
+
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Tema oscuro */
+body.tema-oscuro {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+
+/* === Temas por color === */
+body.tema-azul {
+  background-color: #e0f0ff;
+  color: #003366;
+}
+.navbar.tema-azul {
+  background-color: #007bff;
+}
+button.tema-azul {
+  background-color: #0056b3;
+  color: white;
+}
+
+body.tema-verde {
+  background-color: #f0fff0;
+  color: #064d06;
+}
+.navbar.tema-verde {
+  background-color: #32cd32;
+}
+button.tema-verde {
+  background-color: #228b22;
+  color: white;
+}
+
+body.tema-rojo {
+  background-color: #fff0f0;
+  color: #660000;
+}
+.navbar.tema-rojo {
+  background-color: #ff4a4a;
+}
+button.tema-rojo {
+  background-color: #b22222;
+  color: white;
+}

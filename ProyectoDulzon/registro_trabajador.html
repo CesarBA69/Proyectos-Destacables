@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro Trabajador</title>
+  <link rel="stylesheet" href="style.css">
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const tema = localStorage.getItem('tema');
+    if (tema) {
+      document.body.classList.add('tema-' + tema);
+      const navbar = document.querySelector('.navbar');
+      const botones = document.querySelectorAll('button');
+      if (navbar) navbar.classList.add('tema-' + tema);
+      botones.forEach(btn => btn.classList.add('tema-' + tema));
+    }
+  });
+</script>
+
+</head>
+
+<body>
+  <main class="form-container">
+    <h2 class="titulo">Registro de Trabajador</h2>
+    <form action="registro_trabajador.php" method="POST">
+      <label for="nombre">Nombre Completo:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" name="correo" required>
+
+      <label for="telefono">Teléfono:</label>
+      <input type="text" id="telefono" name="telefono" placeholder="Opcional">
+
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" name="direccion" placeholder="Opcional">
+
+      <label for="usuario">Usuario:</label>
+      <input type="text" id="usuario" name="usuario" required>
+
+      <label for="contrasena">Contraseña:</label>
+      <input type="password" id="contrasena" name="contrasena" required>
+
+      <label for="rol">Rol:</label>
+      <select name="rol" id="rol" required>
+        <option value="">Selecciona...</option>
+        <option value="Admin">Admin</option>
+        <option value="Atencion">Atencion</option>
+      </select>
+
+      <button type="submit">Registrar</button>
+    </form>
+    <p id="mensaje"></p>
+    <a class="volver-inicio" href="index.php">Volver al inicio</a>
+  </main>
+</body>
+</html>
+
